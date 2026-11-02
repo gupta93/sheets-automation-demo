@@ -1,0 +1,11 @@
+Date,Product,Region,Amount,Notes
+2025-09-29,Widget,West,120.00,Online order
+2025-09-29,Widget,West,120.00,Duplicate row (removed on clean)
+2025-09-30,Gadget,East,89.5,
+10/01/2025,Widget,North,50,US date format
+2025-10-06,Widget,West,150.00,Current week
+2025-10-06,Gadget,East,60,
+2025-10-07,Widget,North,75,
+,broken row,West,10,Missing date → flagged invalid
+2025-10-08,Service,West,-5,Negative amount → invalid
+2025-10-06,Widget,West,150,Another duplicate
