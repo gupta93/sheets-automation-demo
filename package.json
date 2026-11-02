@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "build:gas": "node scripts/build-gas-lib.js",
-    "lint": "eslint lib tests",
+    "lint": "eslint lib tests src",
     "test": "npm run build:gas && vitest run",
     "test:watch": "vitest"
   },

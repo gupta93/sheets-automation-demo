@@ -8,6 +8,9 @@ function onOpen() {
     .addItem('Run clean & weekly summary', 'runCleanAndSummary')
     .addItem('Refresh “How to use” tab', 'refreshHowToUseTab')
     .addSeparator()
+    .addItem('Set up email summary…', 'configureEmailFromMenu')
+    .addItem('Turn off email summary', 'disableEmailFromMenu')
+    .addSeparator()
     .addItem('Install weekly trigger (Mondays 8am)', 'installWeeklyTrigger')
     .addItem('Remove weekly trigger', 'removeWeeklyTrigger')
     .addToUi();
@@ -17,7 +20,7 @@ function runCleanAndSummary() {
   var ss = SpreadsheetApp.getActiveSpreadsheet();
   var rawRows = readRawTab_(ss);
   if (rawRows.length === 0) {
-    SpreadsheetApp.getUi().alert(
+    notifyUser_(
       'No data rows found on the “' +
         TAB_RAW +
         '” tab. Import sample CSV or add headers plus data.'
@@ -31,7 +34,7 @@ function runCleanAndSummary() {
 
   var weekStart = latestWeekStart(result.cleaned);
   if (!weekStart) {
-    SpreadsheetApp.getUi().alert('No valid dates after cleaning.');
+    notifyUser_('No valid dates after cleaning.');
     return;
   }
 
@@ -42,7 +45,7 @@ function runCleanAndSummary() {
 
   maybeEmailSummary_(ss.getName(), summaryRows);
 
-  SpreadsheetApp.getUi().alert(
+  notifyUser_(
     'Done. Cleaned ' +
       result.cleaned.length +
       ' row(s), flagged ' +
@@ -62,7 +65,7 @@ function installWeeklyTrigger() {
     .onWeekDay(ScriptApp.WeekDay.MONDAY)
     .atHour(8)
     .create();
-  SpreadsheetApp.getUi().alert(
+  notifyUser_(
     'Weekly trigger installed: every Monday at 8:00 AM (spreadsheet time zone).'
   );
 }
@@ -74,4 +77,5 @@ function removeWeeklyTrigger() {
       ScriptApp.deleteTrigger(t);
     }
   });
+  notifyUser_('Weekly trigger removed (if one was installed).');
 }

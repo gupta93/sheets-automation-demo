@@ -32,8 +32,9 @@ function refreshHowToUseTab() {
     [''],
     ['Email (optional, off by default)'],
     [
-      'In Extensions → Apps Script, run setEmailSummaryTo("your@email.com") once, then setEmailSummaryEnabled(true). Set false to turn off.',
+      'Use Sales automation → Set up email summary… and enter your address, or edit setupEmail() in Apps Script and run it once from the editor.',
     ],
+    ['Turn off email: Sales automation → Turn off email summary.'],
     [''],
     ['Need help?'],
     [
