@@ -1,0 +1,14 @@
+Date,Product,Region,Amount,Customer
+2025-10-06,Widget Pro,North,1200,Acme Corp
+10/07/2025,Widget Pro,South, 850 ,Beta LLC
+2025-10-08,Gadget Lite,East,450,Gamma Inc
+2025-10-08,Gadget Lite,East,450,Gamma Inc
+2025-10-09,Widget Pro,North,300,Delta Co
+invalid-date,Widget Pro,West,100,Bad Date Co
+2025-10-13,Widget Pro,North,500,Epsilon Ltd
+2025-10-14,Gadget Lite,West,200,Zeta Shop
+2025-10-14,Widget Pro,South,750,Acme Corp
+2025-10-15,,North,100,Missing Product
+2025-10-16,Widget Pro,North,-50,Negative Co
+2025-09-30,Widget Pro,North,900,Prior Week Co
+2025-10-01,Gadget Lite,South,400,Prior Week Two
